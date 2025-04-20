@@ -42,7 +42,14 @@
   
         <div class="p-4 sm:ml-64">
             <div class="mt-14">
-                @include('layouts.partials.admin.breadcrumb')
+                <div class="flex items-center justify-between">
+                    @include('layouts.partials.admin.breadcrumb')
+                    @isset($action)
+                        <div>
+                            {{ $action }}
+                        </div>                        
+                    @endisset                    
+                </div>               
                 <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
                     
                     {{ $slot }}
@@ -51,6 +58,24 @@
             </div>
         </div>
 
+        <!-- Font Sweetalert2 -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         @livewireScripts
+
+        @stack('js')
+
+        @if (session('swal'))
+            <script>
+                Swal.fire({!! json_encode(session('swal')) !!});
+            </script>           
+        @endif
+
+        <script>
+            Livewire.on('swal', data => {
+                Swal.fire(data[0]);
+            });
+        </script>
+
     </body>
 </html>

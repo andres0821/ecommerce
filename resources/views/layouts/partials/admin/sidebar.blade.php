@@ -5,6 +5,27 @@
             'name' => 'Dashboard',
             'route' => route('admin.dashboard'),
             'active' => request()->routeIs('admin.dashboard'),
+        ],
+        [
+            //Familia de productos
+            'icon' => 'fa-solid fa-box-open',
+            'name' => 'Familias',
+            'route' => route('admin.families.index'),
+            'active' => request()->routeIs('admin.families.*'),
+        ],
+        [
+            //Categoria de productos
+            'icon' => 'fa-solid fa-tags',
+            'name' => 'Categorias',
+            'route' => route('admin.categories.index'),
+            'active' => request()->routeIs('admin.categories.*'),
+        ],
+        [
+            //Subcategoria de productos
+            'icon' => 'fa-solid fa-tag',
+            'name' => 'Subcategorías',
+            'route' => route('admin.subcategories.index'),
+            'active' => request()->routeIs('admin.subcategories.*'),
         ]
     ]
 @endphp

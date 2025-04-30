@@ -36,6 +36,5 @@ class Product extends Model
         return $this->belongsToMany(Option::class)
             ->withPivot('value')
             ->withTimestamps();
-
     }
 }

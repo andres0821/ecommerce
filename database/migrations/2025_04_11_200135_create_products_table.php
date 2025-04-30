@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('sku')->unique();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->string('image_path')->nullable();
+            $table->string('image_path');
             $table->float('price');
 
             $table->foreignId('subcategory_id')

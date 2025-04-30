@@ -1,10 +1,18 @@
 @php
     $links = [
         [
+            //Dashboard
             'icon' => 'fa-solid fa-gauge',
             'name' => 'Dashboard',
             'route' => route('admin.dashboard'),
             'active' => request()->routeIs('admin.dashboard'),
+        ],
+        [
+            //Opciones
+            'icon' => 'fa-solid fa-cog',
+            'name' => 'Opciones',
+            'route' => route('admin.options.index'),
+            'active' => request()->routeIs('admin.options.*'),
         ],
         [
             //Familia de productos
@@ -26,6 +34,13 @@
             'name' => 'Subcategorías',
             'route' => route('admin.subcategories.index'),
             'active' => request()->routeIs('admin.subcategories.*'),
+        ],
+        [
+            //Productos
+            'icon' => 'fa-solid fa-box',
+            'name' => 'Productos',
+            'route' => route('admin.products.index'),
+            'active' => request()->routeIs('admin.products.*'),
         ]
     ]
 @endphp

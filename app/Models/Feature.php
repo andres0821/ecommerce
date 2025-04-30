@@ -12,7 +12,7 @@ class Feature extends Model
     protected $fillable = [
         'value',
         'description',
-        'option_id',
+        'option_id'
     ];
 
     //Uno a muchos inversa
